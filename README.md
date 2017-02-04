@@ -1,0 +1,1 @@
+#WooCommerce Extension Plugin Boilerplate
