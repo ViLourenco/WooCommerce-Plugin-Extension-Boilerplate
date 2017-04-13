@@ -74,7 +74,7 @@ if ( ! class_exists( 'WooCommerce_Extension_Plugin_Boilerplate' ) ) {
 		 * @var string
 		 */
 		public function includes() {
-			include_once 'includes/woo-extension-functionality.php';
+			include_once 'includes/woocommerce-extension-functionality.php';
 		}
 
 		/**
