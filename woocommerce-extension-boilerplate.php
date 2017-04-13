@@ -84,11 +84,11 @@ if ( ! class_exists( 'WooCommerce_Extension_Plugin_Boilerplate' ) ) {
 		 * @return bool
 		 */
 		public function load_plugin_textdomain() {
-			$locale = apply_filters( 'wepb_plugin_locale', get_locale(), 'woo-extension-plugin-boilerplate' );
+			$locale = apply_filters( 'wepb_plugin_locale', get_locale(), 'woocommerce-extension-plugin-boilerplate' );
 
-			//load_textdomain( 'woo-extension-plugin-boilerplate', trailingslashit( WP_LANG_DIR ) . 'woo-extension-plugin-boilerplate/woo-extension-plugin-boilerplate' . '-' . $locale . '.mo' );
+			//load_textdomain( 'woo-extension-plugin-boilerplate', trailingslashit( WP_LANG_DIR ) . 'woocommerce-extension-plugin-boilerplate/woocommerce-extension-plugin-boilerplate' . '-' . $locale . '.mo' );
 
-			load_plugin_textdomain( 'woo-extension-plugin-boilerplate', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+			//load_plugin_textdomain( 'woocommerce-extension-plugin-boilerplate', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 			return true;
 		}
