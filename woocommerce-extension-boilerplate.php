@@ -21,12 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-if ( ! class_exists( 'WooCommerce_Extension_Plugin_Boilerplate' ) ) {
+if ( ! class_exists( 'WooCommerce_Plugin_Extension_Boilerplate' ) ) {
 
 	/**
 	 * Main Class.
 	 */
-	class WooCommerce_Extension_Plugin_Boilerplate {
+	class WooCommerce_Plugin_Extension_Boilerplate {
 
 
 		/**
@@ -68,6 +68,25 @@ if ( ! class_exists( 'WooCommerce_Extension_Plugin_Boilerplate' ) ) {
 			}
 		}
 
+        /**
+         * Method to call and run all the things that you need to fire when your plugin is activated.
+         *
+         */
+        public static function activate() {
+            include_once 'includeswoocommerce-plugin-extension-boilerplate-activate.php';
+            WooCommerce_Plugin_Extension_Boilerplate_Activate::activate();
+
+        }
+
+        /**
+         * Method to call and run all the things that you need to fire when your plugin is deactivated.
+         *
+         */
+        public static function deactivate() {
+            include_once 'includes/woocommerce-plugin-extension-boilerplate-deactivate.php';
+            WooCommerce_Plugin_Extension_Boilerplate_Deactivate::deactivate();
+        }
+
 		/**
 		 * Method to includes our dependencies.
 		 *
@@ -107,6 +126,16 @@ if ( ! class_exists( 'WooCommerce_Extension_Plugin_Boilerplate' ) ) {
 }
 
 /**
+* Hook to run when your plugin is activated
+*/
+register_activation_hook( __FILE__, array( 'WooCommerce_Plugin_Extension_Boilerplate', 'activate' ) );
+
+/**
+* Hook to run when your plugin is deactivated
+*/
+register_deactivation_hook( __FILE__, array( 'WooCommerce_Plugin_Extension_Boilerplate', 'deactivate' ) );
+
+/**
 * Initialize the plugin.
 */
-add_action( 'plugins_loaded', array( 'WooCommerce_Extension_Plugin_Boilerplate', 'get_instance' ) );
+add_action( 'plugins_loaded', array( 'WooCommerce_Plugin_Extension_Boilerplate', 'get_instance' ) );
